@@ -103,3 +103,17 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Use custom user model
 AUTH_USER_MODEL = 'authentication.CustomUser'
+
+
+
+
+
+import os
+
+ALLOWED_HOSTS = ['*']
+
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# WhiteNoise middleware (static serve)
+MIDDLEWARE.insert(1, 'whitenoise.middleware.WhiteNoiseMiddleware')
