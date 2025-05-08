@@ -1,0 +1,16 @@
+{
+  "builds": [
+    {
+      "name": "backend",
+      "path": "backend",
+      "build_command": "pip install -r requirements.txt && python manage.py collectstatic --noinput",
+      "run_command": "gunicorn backend.wsgi:application"
+    },
+    {
+      "name": "frontend",
+      "path": "frontend",
+      "build_command": "npm install && npm run build",
+      "run_command": "serve -s build"
+    }
+  ]
+}
